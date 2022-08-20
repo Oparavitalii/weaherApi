@@ -1,0 +1,71 @@
+
+
+
+.api__items {
+    background: linear-gradient(319.49deg, #494776 -0.8%, #305476 98.01%);
+    backdrop-filter: blur(32.6194px);
+    border-radius: 22.2px;
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+}
+.api__items .api__square {
+    position: absolute;
+    overflow: hidden;
+    right: -10%;
+    top: 25%;
+    height: 31px;
+    width: 200px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.0001) 100%);
+    border-radius: 12.3px;
+    transform: rotate(140deg);
+}
+.api__round {
+    position: absolute;
+    left: 20.69%;
+    top: 70%;
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.08;
+    width: 260px;
+    height: 130px;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+.api__img  img {
+    margin-left: 50px;
+    
+    height: 150px;
+    width: 150px;
+}
+.api__column {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ color: #FFFFFF;
+}
+.api__celc {
+    font-size: 75px;
+    line-height: 100px;
+    letter-spacing: -5px;
+}
+.api__celc span {
+    margin-left: 10px;
+}
+.api__wr {
+    
+    margin: 50px;
+}
+.api__atmosfera {
+    font-size: 37.44px;
+    line-height: 46px;
+}
+.api__time {
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 9px;
+    width: 250px;
+}
+.api-city {
+    font-size: 25px;
+    font-weight: 700;
+}
