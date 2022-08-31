@@ -1,66 +1,22 @@
-import React from "react";
+import React, { Component } from "react";
 
+import WeatherDayItem from "../weather-day/weather-day";
 import "./weather-days.css"
-import icn from "./cloudly.png";
 
-const WeatherDays = () => {
-    console.log(icn)
-    return (
+export default class WeatherDays extends Component {
+   
+    render() {
+        const {city,country,error} = this.props
+        return (
         <div className="wdays">
-            <div className="container">
-                <div className="wdays__items">
-                    <div className="wdays__item">
-                        <div className="wdays__img"> <img alt="icon" src={icn} ></img></div>
-                        <div className="wdays__column">
-                        <div className="wdays__temperatura-day">21</div>
-                        <div className="wdays__temperatura-night">11</div>
-                        </div>
-                    </div>
-                    <div className="wdays__item">
-                        <div className="wdays__img"> <img alt="icon" src={icn} ></img></div>
-                        <div className="wdays__column">
-                        <div className="wdays__temperatura-day">21</div>
-                        <div className="wdays__temperatura-night">11</div>
-                        </div>
-                    </div>
-                    <div className="wdays__item">
-                        <div className="wdays__img"> <img alt="icon" src={icn} ></img></div>
-                        <div className="wdays__column">
-                        <div className="wdays__temperatura-day">21</div>
-                        <div className="wdays__temperatura-night">11</div>
-                        </div>
-                    </div>
-                    <div className="wdays__item">
-                        <div className="wdays__img"> <img alt="icon" src={icn} ></img></div>
-                        <div className="wdays__column">
-                        <div className="wdays__temperatura-day">21</div>
-                        <div className="wdays__temperatura-night">11</div>
-                        </div>
-                    </div>
-                    <div className="wdays__item">
-                        <div className="wdays__img"> <img alt="icon" src={icn} ></img></div>
-                        <div className="wdays__column">
-                        <div className="wdays__temperatura-day">21</div>
-                        <div className="wdays__temperatura-night">11</div>
-                        </div>
-                    </div>
-                    <div className="wdays__item">
-                        <div className="wdays__img"> <img alt="icon" src={icn} ></img></div>
-                        <div className="wdays__column">
-                        <div className="wdays__temperatura-day">21</div>
-                        <div className="wdays__temperatura-night">11</div>
-                        </div>
-                    </div>
-                    <div className="wdays__item">
-                        <div className="wdays__img"> <img alt="icon" src={icn} ></img></div>
-                        <div className="wdays__column">
-                        <div className="wdays__temperatura-day">21</div>
-                        <div className="wdays__temperatura-night">11</div>
-                        </div>
-                    </div>
-                </div>
+            <div className="container">          
+                        <WeatherDayItem 
+                                        error={error} 
+                                        city={city} 
+                                        country={country} />
             </div>
         </div>
+        
     )
+    }
 }
-export default WeatherDays;

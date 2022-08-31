@@ -7,7 +7,22 @@ export default class Form extends Component {
         city: ""
     }
 
-    
+    setCityOfWeather = () => {
+        this.setState({
+            city: this.props.cityValue
+        })
+    }
+
+    componentDidMount() {
+        this.setCityOfWeather()
+    }
+
+    componentDidUpdate(prevProps) {
+        if(prevProps.cityValue !== this.props.cityValue) {
+            this.setCityOfWeather()
+        }
+    }
+
     onChange = (e) => {
         this.props.getTextEntry(e.target.value)
         this.setState({
@@ -23,7 +38,6 @@ export default class Form extends Component {
         })
     }
     render() {
-
         return (
             <section className="form">
                 <div className="container">

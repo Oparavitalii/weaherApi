@@ -1,3 +1,3 @@
 import WeatherIcon from "./weather-icon";
-
-export default WeatherIcon;
+import WeatherIconDay from "./weather-icon-day";
+export { WeatherIconDay,WeatherIcon };

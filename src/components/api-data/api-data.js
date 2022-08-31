@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import WeatherApi from "../../services/api";
-import WeatherIcon from "../weather-icons";
+import {WeatherIcon} from "../weather-icons";
 
 import Error from "../Error";
 import Spinner from "../spinner";
@@ -33,11 +33,12 @@ export default class ApiData extends Component {
     }
     
     onError = ()  => {
-        console.log("error")
+       
         this.setState({
             loading:false,
             error:true
         })
+        this.props.isError(this.state.error)
     }
     updateWeather() {
         const {propsCity} = this.props;
@@ -49,8 +50,12 @@ export default class ApiData extends Component {
                 error:false,
                 loading:false
             })
+            this.props.getCountry(cityWeather.country)
+            this.props.getCityName(cityWeather.name)
+            this.props.isError(this.state.error) 
         })
         .catch(this.onError)
+
     }
 
     render() {
@@ -81,9 +86,7 @@ return (
     <div className="api__column">
     <div className="api__img">
         <WeatherIcon precipitation={precipitation} />
-    </div>
-    
-        
+    </div>    
         <div className="api__wr">
             <div className="api__celc">{temperatura}<span>°C</span></div>
             <div className="api__atmosfera">{precipitation}</div>

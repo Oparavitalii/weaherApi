@@ -22,14 +22,17 @@ export default class WeatherApi {
         return {
             temp : data.main.temp,
             precipitation : data.weather[0].main,
-            name:data.name
+            name:data.name,
+            name: data.name,
+            country : data.sys.country
+            
         }
     }
 }
 // const apiWeather = new WeatherApi();
 
 // apiWeather.getCityWeather("kyiv").then((data) => {
-//     console.log(data)
+//     console.log(data.name)
 // })
 // .catch((err) => {
 //     console.error(`error ${err}`)
